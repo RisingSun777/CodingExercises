@@ -19,7 +19,7 @@ void popStackToResult(char* result, stack<char*> &stack) {
 }
 
 void pushCharToStack(char* const position, stack<char*> &stack) {
-	char* a = new char;
+	char* a = new char[5];
 	strcpy(a, "");
 
 	strncat(a, position, 1);
@@ -31,7 +31,7 @@ char* convertToReversedPolish(char* expression) {
 		return NULL;
 
 	stack<char*> operators_stack;
-	char* converted = new char;
+	char* converted = new char[getReversedPolishExpressionSize(expression)];
 	strcpy(converted, "");
 
 	for(char* i = expression; *i; i++) {
